@@ -1,7 +1,7 @@
 {
     "name": "osx-quicklook",
     "homepage": "https://github.com/khrome/osx-quicklook",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "main": "quicklook.js",
     "description": "Scripted control of the GUI to control quicklook in OS X",
     "keywords": [

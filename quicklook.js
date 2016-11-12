@@ -30,10 +30,10 @@
             if(!groups[match]) groups[match] = [];
             groups[match].push(pages[index]);
         });
-        arrays.forEachEmission(Object.keys(groups), function(groupName, pos, done){
+        arrays.forEachEmission(Object.keys(groups).sort(), function(groupName, pos, done){
             var groupPages = groups[groupName];
             if(options.emitter) options.emitter.emit('quicklook-group', groupPages);
-            exec("osascript -e '"+'tell application "Finder" to open ("'+dir+'" as POSIX file)'+"'", function(){
+            //exec("osascript -e '"+'tell application "Finder" to open ("'+dir+'" as POSIX file)'+"'", function(){
                 exec("osascript -e '"+'tell application "Finder" to activate'+"'", function(){
                     var fileList = '{'+groupPages.map(function(page){
                         return '("'+dir+page+'" as POSIX file)';
@@ -50,7 +50,11 @@
                                              setTimeout(function(){
                                                  // press ESC to exit fullscreen
                                                  exec("osascript -e '"+'tell application "System Events" to keystroke (key code 53) '+"'", function(){
+                                                 setTimeout(function(){
+                                                 exec("osascript -e '"+'tell application "System Events" to keystroke "w" using command down'+"'", function(){
                                                      done();
+                                                 });
+                                                 }, 500);
                                                  });
                                              }, readTime);
                                          } else {
@@ -77,7 +81,7 @@
                         });
                     });
                 });
-            });
+            //});
         }, function(){
             if(cb) cb();
         });
