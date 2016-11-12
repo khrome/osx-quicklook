@@ -1,0 +1,32 @@
+{
+    "name": "osx-quicklook",
+    "homepage": "https://github.com/khrome/osx-quicklook",
+    "version": "0.0.1",
+    "main": "quicklook.js",
+    "description": "Scripted control of the GUI to control quicklook in OS X",
+    "keywords": [
+        "quicklook",
+        "preview",
+        "osx",
+        "image"
+    ],
+    "author": "Abbey Hawk Sparrow <@khrome> (http://patternweaver.com)",
+    "contributors": [],
+    "bugs": {
+        "url": "https://github.com/khrome/osx-quicklook/issues"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/khrome/osx-quicklook.git"
+    },
+    "dependencies": {
+        "common-path-prefix": "*",
+        "async-arrays": "*"
+    },
+    "devDependencies": {},
+    "optionalDependencies": {},
+    "engines": {
+        "node": "*"
+    }
+}
