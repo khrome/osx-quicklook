@@ -30,7 +30,6 @@
             if(!groups[match]) groups[match] = [];
             groups[match].push(pages[index]);
         });
-        console.log(groups);
         arrays.forEachEmission(Object.keys(groups), function(groupName, pos, done){
             var groupPages = groups[groupName];
             if(options.emitter) options.emitter.emit('quicklook-group', groupPages);
