@@ -42,10 +42,10 @@
                         var modifiers = options.fullscreen?'{command down, option down}':'command down';
                         exec("osascript -e '"+'tell application "System Events" to keystroke "y" using '+modifiers+"'", function(){
                              function showAll(){
-                                 var fuse = pages.length-1;
+                                 var fuse = groupPages.length-1;
                                  function next(){
                                      setTimeout(function(){
-                                         if(options.emitter) options.emitter.emit('quicklook-file', pages[pages.length-fuse-1]);
+                                         if(options.emitter) options.emitter.emit('quicklook-file', groupPages[groupPages.length-fuse-1]);
                                          if(!fuse){
                                              setTimeout(function(){
                                                  // press ESC to exit fullscreen
